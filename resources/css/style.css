@@ -139,14 +139,6 @@ header {
     color: #fff;
 }
 
-/* .mobile-nav-icon .ion-navicon-menu { z-index: 10; }
-.mobile-nav-icon .ion-navicon-close { 
-    position: absolute; 
-    top: 0; 
-    right: 0; 
-    opacity: 0;
-    z-index: 1; 
-} */
 
 
 /* ---------------------------------*/
@@ -345,8 +337,8 @@ input[type=submit]:active{
 
 .mealphotos img:hover {
     opacity: 1;
-    -webkit-transform: scale(1.03);
-            transform: scale(1.03); */--animation bottom white line issue-- */
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); */--animation bottom white line issue-- */
 }
 
 /* HOW IT WORKS ---------------------------*/
