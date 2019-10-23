@@ -106,7 +106,7 @@
 	.box { height: auto;  }
 	.box p {margin: 20px auto; width: 60%; text-align: center;font-size: 1em;}
 	.icon-big {	font-size: 250%;}
-	.box h3 {width: 100%; height: auto; margin-bottom: 20px;}
+	.box h3 {width: 100%; height: auto; margin-bottom: 20px; margin-top: 35px;}
 	.box-coaches .box {height: auto;}
 	.box-coaches .box p {font-size: 1em;margin: ;}
 	.box-coaches img {width: 60%; margin-top: 20px;}
