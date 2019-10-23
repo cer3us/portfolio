@@ -20,6 +20,9 @@
 	body {font-size: 18px; }
 	section {padding: 60px 0; }
 	.navbar figure img { height: 100px; }
+	.header__herotextbox {
+		top: 29%;
+	}
 	.header__herotextbox .btn { 
 		margin-top: 5px; 
 	}
@@ -58,9 +61,6 @@
 		width: 100% !important;
 		margin: 0 0 4% 0; 
 		 }
-	.header__herotextbox {
-		top: 29%;
-	}
 	.mobile-nav-icon { display: inline-block; } /*nav icon appears at width 767pz and less*/
 	.main-nav {
 		display: none;
