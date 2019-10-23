@@ -56,24 +56,30 @@ header {
 
 
 /*MAIN-NAV-------------------------------*/
-.logo {
+.navbar {
+    display: flex;
+}
+figure {
+    flex: 1;
+    margin-top: 20px;
+}
+figure img {
     height: 150px;
     width: auto;
-    float: left;
-    margin-top: 20px;
 }
 
 .main-nav {
-    float: right;
     list-style: none;
     margin-top: 40px;
+    flex-shrink: 3;
+    display: flex;
+    justify-content: flex-end;
+
 }
     
 .main-nav li {
-    display: inline-block;
     margin-right: 40px;
 }
-
 .main-nav li a:link,
 .main-nav li a:visited {
     padding: 8px 0;
@@ -106,10 +112,16 @@ header {
 .sticky .main-nav li a:visited {
     padding: 16px 0;
 }
-.sticky .logo {
+.sticky .main-nav li a:hover,
+.sticky .main-nav li a:active {
+    border-bottom: 2px solid #e6e6e6;
+}
+.sticky figure {
+    margin: 5px 0;
+}
+.sticky figure img {
     height: 50px;
     width: auto;
-    margin: 5px 0;
 }
 
 /*MOBILE NAV====================================*/
@@ -266,16 +278,17 @@ section {
 }
 
 /*PARAGRAPHS-----------------------------*/
-
+.section-features {
+    background-color: #f0f0f0;
+}
 .long-copy {
     line-height: 145%;
     width: 70%;
     margin-left: 15%;
     padding: 0;
     margin-bottom: 30px;
-    
-    
 }
+
 .box {
     padding: 1%;
     height: 24em;
@@ -292,9 +305,6 @@ section {
     line-height: 145%;  
     margin-top: 1em;
     text-align: left;
-}
-.section-features {
-    background-color: #f0f0f0;
 }
 /*ICONS-------------------------------------*/
 .icon-big {
