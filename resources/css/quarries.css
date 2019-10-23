@@ -58,6 +58,9 @@
 		width: 100% !important;
 		margin: 0 0 4% 0; 
 		 }
+	.header__herotextbox {
+		top: 29%;
+	}
 	.mobile-nav-icon { display: inline-block; } /*nav icon appears at width 767pz and less*/
 	.main-nav {
 		display: none;
