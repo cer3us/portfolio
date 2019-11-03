@@ -1,11 +1,415 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<canvas id="gameCanvas" width="800" height="600"> 
-	</canvas>
-<script src="main.js" type="text/javascript"></script>
-</body>
+<html lang=ru>
+	<head>
+        <title>Heerlen Gym</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/quarries.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+        <link rel="stylesheet" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/animate.css"> 
+        <link rel="stylesheet" type="text/css" href="vendors/css/cssbox.css">
+        <script type="text/javascript" src="vendors/js/html5shiv.js"></script>
+	</head>
+
+	<body>
+        
+		<header>
+            <nav>
+                <div class="row navbar">
+                    <figure>
+                    <img src="resources/img/logo-heerlen-red-2.png" alt="Barbell logo" class="logo animated fadeInDown">
+                    </figure>
+                    <ul class="main-nav animated fadeInDown slow js--main-nav">
+                        <li><a href="#features">О нас</a></li>
+                        <li><a href="#coaches">Команда</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#plans">Стоимость</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                    <div class="mobile-nav-icon">
+                        <a class="js--nav-icon"><i class="fas fa-ellipsis-h"></i></a>
+                    </div>
+                </div>
+            </nav>
+            <div class="header__herotextbox">
+                <h1 class="animated fadeInDown slow"><span>Heerlen Club.</span><br>
+                Добро пожаловать в тяжелую атлетику<span>.</span></h1>
+                <div>
+                    <a class="btn btn-full animated fadeInDown delay-1s js--scroll-to-plans" href="#">Начать!</a>
+                    <a class="btn btn-ghost animated fadeInDown delay-1s js--scroll-to-features" href="#">Подробнее</a>
+                </div>
+            </div>
+        </header>
+        
+        <section class="section-features js--section-features" id="#features">
+            <div class="row features__header">
+                <h2>Научим жить <br>под давлением тяжестей</h2>
+                <p class="long-copy">
+                    Тяжелая атлетика относится к сложнокоординационным видам спорта, которые развивают ловкость, гибкость, силу и скорость. Данный вид спорта направлен на развитие мускулатуры, увеличение подвижности суставов, укрепление сухожильно-связочного аппарата<span>.</span>
+                </p>
+            </div>
+            <div class="row js--wp-1">
+                <div class="col span-1-of-4 box">
+                    <h3>500 м² фунционального пространства</h3>
+                    <i class="fas fa-vector-square icon-big"></i>
+                    <p>Просторный и светлый зал с качественными помостами, стойками для приседаний, плинтами, большим количеством дисков и другим необходимым оборудованием<span>.</span>
+                    </p>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <h3>Профессиональный тренерский коллектив</h3>
+                    <i class="fas fa-medal icon-big"></i>
+                    <p>Мы обучаем правильной технике выполнения тяжелоатлетических упражнений, подготавливаем к участию в соревнованиях различного уровня<span>.</span>
+                    </p>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <h3>Современные тренировочные методики</h3>
+                    <i class="fas fa-drafting-compass icon-big"></i>
+                    <p>Используются передовые методики тренировок, включающие в себя ндивидуальный подход к каждому спортсмену и ведение индивидуальных дневников тренировочной нагрузки<span>.</span>
+                    </p>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <h3>Спорт <br>и<br> культура</h3>
+                    <i class="far fa-smile icon-big"></i>
+                    <p>В клубе регулярно проводятся семинары, лекции и встречи с опытыными спортсменами и спортивнами специалистами<span>.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section-photos" id="gallery">
+            <div class="row">
+                <h2>Галерея</h2>
+            </div>
+            <ul class="section_showcase clearfix">
+                <li>
+                    <div class="cssbox">
+                          <a id="image1" href="#image1">
+                            <img class="cssbox_thumb" src="resources/img/thumbnails/victor-freitas-JbI04nYfaJk-unsplash.jpg" alt="Weight plates">
+                            <span class="cssbox_full">
+                              <img src="resources/img/victor-freitas-JbI04nYfaJk-unsplash.jpg" alt="Weight plates">
+                            </span>
+                          </a>
+                          <a class="cssbox_close" href="#void"></a>
+                          <a class="cssbox_next" href="#image2">&gt;</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="cssbox">
+                      <a id="image2" href="#image2">
+                        <img class="cssbox_thumb" src="resources/img/thumbnails/gym2-1.jpg" alt="Gym panorama">
+                        <span class="cssbox_full">
+                          <img src="resources/img/gym2.jpg" alt="Gym panorama">
+                        </span>
+                      </a>
+                      <a class="cssbox_close" href="#void"></a>
+                      <a class="cssbox_prev" href="#image1">&lt;</a>
+                      <a class="cssbox_next" href="#image3">&gt;</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="cssbox">
+                      <a id="image3" href="#image3">
+                        <img class="cssbox_thumb" src="resources/img/thumbnails/gym4.jpg" alt="Female weightlifter">
+                        <span class="cssbox_full">
+                          <img src="resources/img/gym4.jpg" alt="Female weightlifter">
+                        </span>
+                      </a>
+                      <a class="cssbox_close" href="#void"></a>
+                      <a class="cssbox_prev" href="#image2">&lt;</a>
+                      <a class="cssbox_next" href="#image4">&gt;</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="cssbox">
+                      <a id="image4" href="#image4">
+                        <img class="cssbox_thumb" src="resources/img/thumbnails/clean1.jpg" alt="Weightlifting Snatch technique">
+                        <span class="cssbox_full">
+                          <img src="resources/img/clean1.jpg" alt="Weightlifting Snatch technique">
+                        </span>
+                      </a>
+                      <a class="cssbox_close" href="#void"></a>
+                      <a class="cssbox_prev" href="#image3">&lt;</a>
+                      <a class="cssbox_next" href="#image5">&gt;</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="section_showcase clearfix">
+                <li>
+                    <div class="cssbox">
+                          <a id="image5" href="#image5">
+                            <img class="cssbox_thumb" src="resources/img/thumbnails/gym3.jpg" alt="Snatch technique">
+                            <span class="cssbox_full">
+                              <img src="resources/img/gym3.jpg" alt="Snatch technique">
+                            </span>
+                          </a>
+                          <a class="cssbox_close" href="#void"></a>
+                          <a class="cssbox_prev" href="#image4">&lt;</a>
+                          <a class="cssbox_next" href="#image6">&gt;</a>
+                    </div>
+                </li>
+                 <li>
+                    <div class="cssbox">
+                          <a id="image6" href="#image6">
+                            <img class="cssbox_thumb" src="resources/img/thumbnails/gymkids.jpg" alt="Kid learning weightlifting">
+                            <span class="cssbox_full">
+                              <img src="resources/img/gymkids.jpg" alt="Kid learning weightlifting">
+                            </span>
+                          </a>
+                          <a class="cssbox_close" href="#void"></a>
+                          <a class="cssbox_prev" href="#image5">&lt;</a>
+                          <a class="cssbox_next" href="#image7">&gt;</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="cssbox">
+                          <a id="image7" href="#image7">
+                            <img class="cssbox_thumb" src="resources/img/thumbnails/luxiaojun.3jpg.jpg" alt="Lu Xiaojun">
+                            <span class="cssbox_full">
+                              <img src="resources/img/luxiaojun.3jpg.jpg" alt="Lu Xiaojun">
+                            </span>
+                          </a>
+                          <a class="cssbox_close" href="#void"></a>
+                          <a class="cssbox_prev" href="#image6">&lt;</a>
+                          <a class="cssbox_next" href="#image8">&gt;</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="cssbox">
+                          <a id="image8" href="#image8">
+                            <img class="cssbox_thumb" src="resources/img/thumbnails/alora-griffiths-3.jpg" alt="Female weightlifter">
+                            <span class="cssbox_full">
+                              <img src="resources/img/alora-griffiths-3.jpg" alt="Female weightlifter">
+                            </span>
+                          </a>
+                          <a class="cssbox_close" href="#void"></a>
+                          <a class="cssbox_prev" href="#image7">&lt;</a>
+                          <a class="cssbox_next" href="#image1">&gt;</a>
+                    </div>
+                </li>
+            </ul>              
+        </section>
+        
+        <section class="section-coaches" id="coaches">
+            <div class="row">
+                <h2>Тренерский коллектив</h2>
+            </div>
+            <div class="row box-coaches js--wp-3">
+                <div class="col span-1-of-3 box">
+                    <img src="resources/img/coach5.jpg" alt="Борисов Владимир Дмитриевич">
+                    <p>Мастер спорта СССР международного класса по тяжелой атлетике, неоднократный победитель и призер всесоюзных соревнований, тренерский стаж более 20 лет<span>.</span></p>
+                </div>
+                <div class="col span-1-of-3 box">
+                    <img src="resources/img/coach4.jpg" alt="Зимин Андрей Юрьевич">
+                    <p>Мастер спорта СССР, судья Всероссийской категории, подготовивший более 10 Мастеров спорта, тренерский стаж более 25 лет<span>.</span></p>
+                </div>
+                <div class="col span-1-of-3 box">
+                    <img src="resources/img/coach7.jpg" alt="Сырцов Александр Сергеевич">
+                    <p>Заслуженный тренер России по тяжелой атлетике, Заслуженный мастер спорта, двукратный серебряный призер Олимпийских игр, многократный чемпион и рекордсмен мира и Европы<span>.</span></p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section-plans js--section-plans" id="plans">
+            <div class="row">
+                <h2>начни сегодня</h2>
+                <h3>Клубные карты</h3>
+            </div>
+            <div class="row js--wp-4">
+                <div class="col span-1-of-3 js--wp-5">
+                    <div class="plan-box">
+                        
+                        <div>
+                            <h3>"Премиум"</h3>
+                            <p class="plan-price">6,000₽<span>/месяц</span></p>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-check icon-small"></i>
+                                    7 Open-gym тренировок в неделю
+                                </li>
+                                <li>
+                                    <i class="fas fa-check icon-small"></i>
+                                    5 индивидуальных занятий с тренером в неделю
+                                </li>
+                                <li>
+                                    <i class="fas fa-check icon-small"></i>
+                                    3 сеанса спортивного массажа
+                                </li>
+                                <li>
+                                   <i class="fas fa-gift icon-small"></i> Спортивное питание 
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-full">Заказать сейчас</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col span-1-of-3">
+                    <div class="plan-box">
+                        
+                        <div>
+                            <h3>"Про"</h3>
+                            <p class="plan-price">4,000₽<span>/месяц</span></p>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-check icon-small"></i>
+                                    5 Open-gym тренировок в неделю
+                                </li>
+                                <li>
+                                    <i class="fas fa-check icon-small"></i>
+                                    3 индивидуальных занятия с тренером в неделю
+                                </li>
+                                <li>
+                                    <i class="fas fa-check icon-small"></i>
+                                    1 сеанса спортивного массажа
+                                </li>
+                                <li>
+                                   <i class="far fa-times-circle icon-small"></i>
+                                    Спортивное питание
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-ghost">Заказать сейчас</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col span-1-of-3">
+                    <div class="plan-box">
+                        
+                        <div>
+                            <h3>"СТАРТ"</h3>
+                            <p class="plan-price">2,000₽<span>/месяц</span></p>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-check icon-small"></i>
+                                    3 Open-gym тренировок в неделю
+                                </li>
+                                <li>
+                                    <i class="fas fa-check icon-small"></i>
+                                    1 индивидуальное занятие с тренером в неделю
+                                </li>
+                                <li>
+                                    <i class="far fa-times-circle icon-small"></i>
+                                    Cпортивный массаж
+                                </li>
+                                <li>
+                                   <i class="far fa-times-circle icon-small"></i>
+                                    Спортивное питание
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-ghost">Заказать сейчас</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-form">
+            <div class="row">
+                <h2>Рады ответить на ваши вопросы</h2>
+            </div> 
+            <div class="row">
+                <form method="POST" action="#" class="contact-form" id="contact">
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name">Имя</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="name" id="name" placeholder="Ваше Имя" required>
+                        </div>
+                    </div>
+                        <div class="row">
+                            <div class="col span-1-of-3">
+                                <label for="email">E-mail</label>
+                            </div>
+                            <div class="col span-2-of-3">
+                                <input type="email" name="email" id="email" placeholder="Электронная почта" required>
+                            </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="col span-1-of-3"> 
+                            <label for="find-us">Как Вы о нас узнали?</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <select name="find-us" id="find-us">
+                                <option value="friends">Друзья</option>
+                                <option value="search" selected>Поисковые системы</option>
+                                <option value="adds">Реклама</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Подписаться на новостную рассылку?</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="checkbox" name="news" id="news" checked> Да, хочу получать новости!
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Оставить сообщение</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <textarea name="message" placeholder="Ваше сообщение"></textarea> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>&nbsp;</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="submit" value=" Отправить! ">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div class="row">
+                <div class="col span-1-of-2">
+                    <ul class="footer-nav">
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Блог</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">iOS приложение</a></li>
+                        <li><a href="#">Android приложение</a></li>
+                    </ul>
+                </div>
+                <div class="col span-1-of-2">
+                    <ul class="social-links">
+                        <li><a href="#"><i class="fab fa-facebook-square logo-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter-square logo-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram logo-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube logo-youtube"></i></a></li>
+                    </ul>
+            </div>
+            <div class="row">
+                <p>Copyright &copy; 2019 by Heerlen Club. All rights reserved. 
+                </p>
+            </div>
+        </div>
+
+        </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="vendors/js/respond.js"></script>
+    <script src="https://kit.fontawesome.com/6670f09b35.js" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/selectivizr2@1.0.9/selectivizr2.js"></script>
+    <script type="text/javascript" src="vendors/js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="resources/js/script.js"></script>
+	</body>
 </html>
+
