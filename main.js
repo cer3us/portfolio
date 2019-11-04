@@ -24,12 +24,14 @@ const calculateMousePos = (evt) => {
 	return {
 		x:mouseX,
 		y:mouseY
-	};
+	}
 };
 const calculateTouchPos = (evt) => {
 	if(evt.touches) {
-		paddleY = evt.touches[0].pageY - canvas.offsetLeft - PADDLE_HEIGHT/2;
-		paddleX = evt.touches[0].pageX - canvas.offsetLeft - PADDLE_THICKNESS/2;
+		let rect = canvas.getBoundingClientRect();
+		let root = document.documentElement;
+		paddleX = evt.touches[0].pageX - canvas.offsetLeft - root.scrollTop;
+		paddleY = evt.touches[0].pageY - canvas.offsetTop - root.scrollLeft;
 		evt.preventDefault();
 		return {
 			x:paddleX,
@@ -61,10 +63,20 @@ window.onload = function() {
 	canvas.addEventListener('mousemove', (evt) => {
 		let mousePos = calculateMousePos(evt);
 		paddle1Y = mousePos.y - (PADDLE_HEIGHT/2); // y points direction from top to BOTTOm, not from bottom to top!
+		if (paddle1Y < 0) {
+			paddle1Y = -90;
+		} else if (paddle1Y > 600) {
+			paddle1Y = 690;
+		}
 	});
 	canvas.addEventListener('touchmove', (evt) => {
 		let touchPos = calculateTouchPos(evt);
 		paddle1Y = touchPos.y - (PADDLE_HEIGHT/2); 
+		if (paddle1Y < 0) {
+			paddle1Y = -90;
+		} else if (paddle1Y > 600) {
+			paddle1Y = 690;
+		}
 	});
 };
 
