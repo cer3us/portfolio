@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Tennis game</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			text-rendering: optimizeLegibility;
+			font-family: Tahoma, Geneva, sans-serif;
+			font-size: 20px;
+			font-weight: 300;
+			background-image: linear-gradient(#000, transparent), url(court_bgr-min.jpg);
+			background-size: 1920px 1080px;
+			background-position: center;
+			overflow: hidden;
+		}
+		h1, p {
+			color: #fff;
+			text-shadow: 0px 0px 2px #fff	;
+		}
+		h1 {
+			font-size: 240%;
+			letter-spacing: 2px;
+			word-spacing: 1px;
+			font-weight: 100;
+		}
+		p {
+		    width: 800px;
+			font-size: 90%;
+		    line-height: 145%;  
+		    margin: 1em 0;
+		    text-align:left;
+		    text-indent: 2em;
+		}
+		 section {
+		 	height: 100vh;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		canvas {
+			border: 2px solid #00212d;
+		}
+	</style>
 </head>
 <body>
-	<canvas id="gameCanvas" width="800" height="600"> 
-	</canvas>
+	<section>
+		<h1>Tennis game</h1>
+		<p>Hello! You're playing as a Left player. Please, use your mouse to control the paddle. The speed of the ball depends on the the area of the paddle it contacts with. A player wins by achieving 5 points first. Hope, you'll enjoy this simple mini-game! :)</p>
+		<canvas id="gameCanvas" width="800" height="600">	</canvas>
+	</section>
 <script src="main.js" type="text/javascript"></script>
 </body>
 </html>

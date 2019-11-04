@@ -1,5 +1,6 @@
 let canvas;
 let canvasContext;
+
 let ballX = 50;
 let ballY = 50;
 let ballSpeedX = 10;
@@ -7,7 +8,7 @@ let ballSpeedY = 4;
 
 let player1Score =0;
 let player2Score =0;
-const WINNING_SCORE = 3;
+const WINNING_SCORE = 5;
 let showingWinScreen = false;
 
 let paddle1Y = 250;
@@ -45,9 +46,14 @@ window.onload = function() {
 		drawEverything();
 	}, 1000/framesPerSecond);
 	canvas.addEventListener('mousedown', handleMouseClick);
+	canvas.addEventListener('touchstart', handleMouseClick);
 	canvas.addEventListener('mousemove', (evt) => {
 		let mousePos = calculateMousePos(evt);
 		paddle1Y = mousePos.y - (PADDLE_HEIGHT/2); // y points direction from top to BOTTOm, not from bottom to top!
+	});
+	canvas.addEventListener('touchmove', (evt) => {
+		let mousePos = calculateMousePos(evt);
+		paddle1Y = mousePos.y - (PADDLE_HEIGHT/2); 
 	});
 };
 //right paddle behavior
@@ -111,36 +117,45 @@ const ballReset = () => {
 	ballX = canvas.width/2;
 	ballY = canvas.height/2;
 };
-const drawNet = () => {
-	for (let i=0; i<canvas.height; i+=40) {
-		drawObject(canvas.width/2-1, i, 2, 20, 'white');//width/2-1 - centers the net, = left:50%, transform:translate(-50%);
-	}
-};
+
 //draw elements
 const drawEverything = () => {
-	// creating a black background box	
-	drawObject(0,0,canvas.width, canvas.height, 'black');
+	// const bgrGrdt = canvasContext.createLinearGradient(0,0,800,0);
+	// bgrGrdt.addColorStop(0, '#7bf548');
+	// bgrGrdt.addColorStop(0.535, '#fff');
+	// bgrGrdt.addColorStop(1, '#fffeda');
+	canvasContext.textAlign = 'center';
+	// creating a background box	
+	drawObject(0,0,canvas.width, canvas.height, '#e5e5e5');
 	if (showingWinScreen) {
-		canvasContext.fillStyle = 'white';
+		canvasContext.fillStyle = '#de5634';
 		if (player1Score >= WINNING_SCORE) {
-			canvasContext.fillText("LEFT player WON!", 350,200);
+			canvasContext.fillText("LEFT player WON!", 400,200);
 		} else if (player2Score >= WINNING_SCORE) {
-			canvasContext.fillText("RIGHT player WON!", 350,200);
+			canvasContext.fillText("RIGHT player WON!", 400,200);
 		}	
-		canvasContext.fillText("Click to continue", 350,500);
+		canvasContext.fillStyle = '#00212d';
+		canvasContext.fillText("Click or tap to continue", 400,500);
 		return; //freezes the objects drawing
 	};
 	//Net
 	drawNet();
 	//left tennis paddle 
-	drawObject(0,paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'white');
+	drawObject(0,paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, '#00212d');
 	//right tennis paddle
-	drawObject(canvas.width - PADDLE_THICKNESS,paddle2Y,PADDLE_THICKNESS,PADDLE_HEIGHT, 'white');
+	drawObject(canvas.width - PADDLE_THICKNESS,paddle2Y,PADDLE_THICKNESS,PADDLE_HEIGHT, '#00212d');
 	// ball
-	drawCircle(ballX, ballY, 10, 'white');
+	drawCircle(ballX, ballY, 10, '#de5634');
 	// score
-	canvasContext.fillText(player1Score, 100,100);
-	canvasContext.fillText(player2Score, canvas.width-100,100);
+	canvasContext.font = "20px Tahoma, Geneva, sans-serif";
+	canvasContext.fillText(player1Score, 350,70);
+	canvasContext.fillText(player2Score, canvas.width-350,70);
+};
+
+const drawNet = () => {
+	for (let i=0; i<canvas.height; i+=40) {
+		drawObject(canvas.width/2-1, i, 2, 20, '#00212d');//width/2-1 - centers the net, = left:50%, transform:translate(-50%);
+	}
 };
 
 const drawCircle = (centerX, centerY, radius, color) => {
