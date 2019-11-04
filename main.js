@@ -26,6 +26,17 @@ const calculateMousePos = (evt) => {
 		y:mouseY
 	};
 };
+const calculateTouchPos = (evt) => {
+	if(evt.touches) {
+		paddleY = evt.touches[0].pageY - canvas.offsetLeft - PADDLE_HEIGHT/2;
+		paddleX = evt.touches[0].pageX - canvas.offsetLeft - PADDLE_THICKNESS/2;
+		evt.preventDefault();
+		return {
+			x:paddleX,
+			y:paddleY
+		}
+	}
+};
 
 const handleMouseClick = (evt) => {
 	if (showingWinScreen) {
@@ -52,10 +63,12 @@ window.onload = function() {
 		paddle1Y = mousePos.y - (PADDLE_HEIGHT/2); // y points direction from top to BOTTOm, not from bottom to top!
 	});
 	canvas.addEventListener('touchmove', (evt) => {
-		let mousePos = calculateMousePos(evt);
-		paddle1Y = mousePos.y - (PADDLE_HEIGHT/2); 
+		let touchPos = calculateTouchPos(evt);
+		paddle1Y = touchPos.y - (PADDLE_HEIGHT/2); 
 	});
 };
+
+
 //right paddle behavior
 const computerMovement = () => {
 	let paddle2YCenter = paddle2Y + (PADDLE_HEIGHT/2);
@@ -65,16 +78,16 @@ const computerMovement = () => {
 		paddle2Y -= 6;
 	}
 }; 
+
+
 const moveEverything = () => {
 	if (showingWinScreen) {
 		return; //freezes the movement when WINNINIG SCREEN is shown
 	};
-
 	computerMovement();
 	//each time we update the screen, ballX increases
 	ballX += ballSpeedX; // constant movement to the right
 	ballY += ballSpeedY;
-
 	if (ballX > canvas.width) {
 		if (ballY > paddle2Y &&
 			ballY < paddle2Y + PADDLE_HEIGHT) {
@@ -97,15 +110,13 @@ const moveEverything = () => {
 				player2Score ++;
 				ballReset();
 		}
-	};
-		
+	};		
 	if (ballY > canvas.height) {
 		ballSpeedY = -ballSpeedY;
 	};
 	if (ballY < 0) {
 		ballSpeedY = -ballSpeedY;
 	};
-
 };
 
 const ballReset = () => {
