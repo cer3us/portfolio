@@ -63,19 +63,19 @@ window.onload = function() {
 	canvas.addEventListener('mousemove', (evt) => {
 		let mousePos = calculateMousePos(evt);
 		paddle1Y = mousePos.y - (PADDLE_HEIGHT/2); // y points direction from top to BOTTOm, not from bottom to top!
-		if (paddle1Y < 0) {
+		if (paddle1Y <= -60) {
 			paddle1Y = -90;
-		} else if (paddle1Y > 600) {
-			paddle1Y = 690;
+		} else if (paddle1Y + PADDLE_HEIGHT >= 660) {
+			paddle1Y  = 590;
 		}
 	});
 	canvas.addEventListener('touchmove', (evt) => {
 		let touchPos = calculateTouchPos(evt);
 		paddle1Y = touchPos.y - (PADDLE_HEIGHT/2); 
-		if (paddle1Y < 0) {
+		if (paddle1Y < -60) {
 			paddle1Y = -90;
-		} else if (paddle1Y > 600) {
-			paddle1Y = 690;
+		} else if (paddle1Y + PADDLE_HEIGHT >= 660) {
+			paddle1Y  = 590;
 		}
 	});
 };
@@ -100,25 +100,29 @@ const moveEverything = () => {
 	//each time we update the screen, ballX increases
 	ballX += ballSpeedX; // constant movement to the right
 	ballY += ballSpeedY;
-	if (ballX > canvas.width) {
-		if (ballY > paddle2Y &&
-			ballY < paddle2Y + PADDLE_HEIGHT) {
+	// r of the ball = 10px (roughly 9.9 px), the contact point X = ballCenterX +- r, the contact point Y = ballCenterY +- r,
+	// ball resets if misses the paddle
+	//PADDLE_THICKNESS = 10px, +2px of margin to adjust the contact point
+	if (ballX + 9.9 >= canvas.width - 12) {
+		if (ballY + 9.9 >= paddle2Y &&
+			ballY - 9.9 <= paddle2Y + PADDLE_HEIGHT) {
 			ballSpeedX = -ballSpeedX;
 			let deltaY = ballY - (paddle2Y + PADDLE_HEIGHT/2); // deltaY defines how close from the paddle center the ball hits the paddle to vary ball's speed accordingly
 			ballSpeedY = deltaY*0.35; //Y speed increases to 35% of the deltaY
-		} else {
+	}; 
+	if (ballX > canvas.width) {
 				player1Score ++; //must be before ballReset()
 				ballReset();
 		}
 	};	
-	if (ballX < 0) {
-		//ball resets if misses the paddle
-		if (ballY > paddle1Y &&
-			ballY < paddle1Y + PADDLE_HEIGHT) {
+	if (ballX - 9.9 <= 12) {
+		if (ballY + 9.9 >= paddle1Y &&
+			ballY - 9.9 <= paddle1Y + PADDLE_HEIGHT) {
 			ballSpeedX = -ballSpeedX;
 			let deltaY = ballY - (paddle1Y + PADDLE_HEIGHT/2); // deltaY defines how close from the paddle center the ball hits the paddle to vary ball's speed accordingly
 			ballSpeedY = deltaY*0.35;
-		} else {
+	}; 
+	if (ballX < 0) {
 				player2Score ++;
 				ballReset();
 		}
@@ -140,6 +144,7 @@ const ballReset = () => {
 	ballX = canvas.width/2;
 	ballY = canvas.height/2;
 };
+
 
 //draw elements
 const drawEverything = () => {
